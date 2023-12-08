@@ -4,7 +4,6 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
 #include <time.h>
@@ -93,7 +92,7 @@ void drawing_playing_field() {
 
 
 //управління змійкою (заборона на поворот на 180 градусів) та вихід з гри через Esc
-int snake_control() {
+void snake_control() {
 
     if ((GetAsyncKeyState('W') & 0x8001) && (direction_of_move != down)) {
         direction_of_move = up;
@@ -112,9 +111,9 @@ int snake_control() {
     }
     else if (GetAsyncKeyState(VK_ESCAPE) & 0x8001) {
         exit_game = true;
-        game_over = true; 
+        game_over = true;
     }
-    
+
 }
 
 
@@ -191,7 +190,7 @@ int main() {
     while (!exit_game) {
 
         settings_for_new_game();
- 
+
         while (!game_over && !exit_game) {
             update_playing_field();
             drawing_playing_field();
