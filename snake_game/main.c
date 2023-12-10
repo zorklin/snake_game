@@ -75,7 +75,7 @@ void drawing_playing_field() {
 
     system("cls");
 
-    printf("snake game\nif you want to quit the program, click Backspace\n\n");
+    printf("snake game\nif you want to quit the program, click Escape\n\n");
 
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
